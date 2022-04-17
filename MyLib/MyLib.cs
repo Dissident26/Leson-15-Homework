@@ -43,7 +43,7 @@ namespace MyLib
             var fileName = Path.GetFileNameWithoutExtension(pathToFile);
             var pathToArchieve = $@"{directoryPath}/{fileName}.zip";
 
-            using (var fileStream = new FileStream($@"{directoryPath}/{fileName}.zip", FileMode.Create))
+            using (var fileStream = new FileStream(pathToArchieve, FileMode.Create))
             using (var archive = new ZipArchive(fileStream, ZipArchiveMode.Create))
             {
                 archive.CreateEntryFromFile(pathToFile, fileName);
